@@ -15,6 +15,5 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    println!("{}", args.example);
     aoc::day(args.day, args.example);
 }
