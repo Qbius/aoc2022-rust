@@ -1,17 +1,20 @@
-use std::env;
 mod aoc;
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    let day_str = if args.len() > 1 {&args[1]} else {""};
-    let example = args.len() > 2 && (args[2] == "-e" || args[2] == "--example");
-    match day_str.parse::<i32>() {
-        Ok(day) => {
-            aoc::day(day, example);
-        },
-        Err(_) => {
-            println!("Please specify day as the first argument");
-        }  
-    };
+use clap::Parser;
 
+/// aoc2022 runner
+#[derive(Parser)]
+struct Args {
+   /// Which aoc2022 day to run, from 1 to 25
+   day: u8,
+
+   /// If set, run the day's example
+   #[arg(short, long, action)]
+   example: bool,
+}
+
+fn main() {
+    let args = Args::parse();
+    println!("{}", args.example);
+    aoc::day(args.day, args.example);
 }

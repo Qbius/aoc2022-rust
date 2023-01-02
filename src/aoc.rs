@@ -28,8 +28,8 @@ use std::collections::HashMap;
 use std::fs;
 type VoidFnPtr = Box<dyn Fn(&String, bool) -> Option<String>>;
 
-pub fn day(n: i32, example: bool) {
-    let mut days = HashMap::<i32, (VoidFnPtr, VoidFnPtr)>::new();
+pub fn day(n: u8, example: bool) {
+    let mut days = HashMap::<u8, (VoidFnPtr, VoidFnPtr)>::new();
     days.insert(1, (Box::new(day1::first), Box::new(day1::second)));
     days.insert(2, (Box::new(day2::first), Box::new(day2::second)));
     days.insert(3, (Box::new(day3::first), Box::new(day3::second)));
