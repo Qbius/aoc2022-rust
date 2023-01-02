@@ -1,9 +1,8 @@
 
-
-pub fn first(_input: &String, _example: bool) -> Option<String> {
+pub fn first(_input: &String) -> Option<String> {
     None
 }
 
-pub fn second(_input: &String, _example: bool) -> Option<String> {
+pub fn second(_input: &String) -> Option<String> {
     None
 }
